@@ -1,17 +1,17 @@
-	.syntax unified
-	.arch armv7-a
-	.text
-	.align 2
-	.thumb
-	.thumb_func
+    .syntax unified
+    .arch armv7-a
+    .text
+    .align 2
+    .thumb
+    .thumb_func
 
-	.global fibonacci
-	.type fibonacci, function
+    .global fibonacci
+    .type fibonacci, function
 
 fibonacci:
-	@ ADD/MODIFY CODE BELOW
-	@ PROLOG
-	push {r3, r4, r5, lr}
+    @ ADD/MODIFY CODE BELOW
+    @ PROLOG
+    push {r3, r4, r5, lr}
 
     sub r4, r0, #0          @ R4 = R0 - 0 (update flags)
     
@@ -30,17 +30,16 @@ fibonacci:
 
     add r0, r5, r0          @ R0 = R5 + R0 (update flags)
 
-    ;r0 = 5
-	pop {r3, r4, r5, pc}		@EPILOG
+    pop {r3, r4, r5, pc}    @EPILOG
 
-	@ END CODE MODIFICATION
+    @ END CODE MODIFICATION
 .L3:
-	mov r0, #0			@ R0 = 0
-	pop {r3, r4, r5, pc}		@ EPILOG
+    mov r0, #0              @ R0 = 0
+    pop {r3, r4, r5, pc}    @ EPILOG
 
 .L4:
-	mov r0, #1			@ R0 = 1
-	pop {r3, r4, r5, pc}		@ EPILOG
+    mov r0, #1              @ R0 = 1
+    pop {r3, r4, r5, pc}    @ EPILOG
 
-	.size fibonacci, .-fibonacci
-	.end
+    .size fibonacci, .-fibonacci
+    .end
